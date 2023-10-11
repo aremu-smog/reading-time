@@ -8,9 +8,16 @@
 	</head>
 	<body>
 		<h3>Paste your text below</h3>
-		<form>
-			<textarea id="textarea" placeholder="Paste your text here..."> </textarea>
+
+		<form id="readingTimeForm">
+			<textarea
+				id="textarea"
+				placeholder="Paste your text here..."
+				required="required"
+			></textarea>
+			<input type="submit" value="Get reading time" />
 		</form>
 	</body>
-	<script src="popup.js"></script>
+
+	<script src="popup.js" type="module"></script>
 </html>
