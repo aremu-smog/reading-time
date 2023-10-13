@@ -1,16 +1,60 @@
-const readingTimeForm = document.querySelector("#readingTimeForm")
-const textArea = document.querySelector("#textarea")
+const contextArea = document.querySelector("#content-area")
 
-readingTimeForm.addEventListener("submit", e => {
-	e.preventDefault()
+const TIME_DELAY = 5_000 // milliseconds
 
-	const rawText = textArea?.value?.trim()
-	const stats = readingTime(rawText)
+window.addEventListener("load", () => {
+	contextArea.innerHTML = formMarkup
+	const readingTimeForm = document.querySelector("#readingTimeForm")
+	const textArea = document.querySelector("#textarea")
+	readingTimeForm.addEventListener("submit", e => {
+		e.preventDefault()
+		const rawText = textArea?.value?.trim()
+		const stats = readingTime(rawText)
 
-	alert("Reading time is: " + stats?.text)
+		const timeTaken = Math.round(stats.minutes)
+		/** Subtracting two minutes because of comparison with current contents on otherfaces of tech website */
+		const actualTimeTaken = timeTaken > 3 ? timeTaken - 2 : timeTaken
+		const resultMarkup = generateMarkup(actualTimeTaken)
+		contextArea.innerHTML = resultMarkup
 
-	readingTimeForm.reset()
+		let timer = setTimeout(() => {
+			contextArea.innerHTML = formMarkup
+			clearTimeout(timer)
+		}, TIME_DELAY)
+	})
 })
+
+const formMarkup = `
+<h3 id="">Paste your text below</h3>
+
+		<form id="readingTimeForm">
+			<textarea
+				id="textarea"
+				placeholder="Paste your text here..."
+				required="required"
+				rows="8"
+			></textarea>
+			<div>
+				<input type="submit" value="Get reading time" />
+			</div>
+		</form>
+`
+
+/**
+ *
+ * @param {string} time - Time it will take to read text
+ * @returns {string}
+ */
+const generateMarkup = time => `
+<div id="result-wrapper">
+	<div id="result-circle">
+		<div>
+			<p>Reading Time:</p>
+			<h1 id="result-value">${time} mins</h1>
+		</div>
+	</div>
+</div>
+`
 
 /*!
  * reading-time
