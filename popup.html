@@ -39,7 +39,6 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				background-color: yellow;
 			}
 
 			#result-circle {
@@ -60,7 +59,7 @@
 			}
 			#result-circle h1 {
 				font-size: 36px;
-				line-height: 1;
+				line-height: 0;
 			}
 			.hide {
 				display: none !important;
@@ -87,7 +86,7 @@
 				<div id="result-circle">
 					<div>
 						<p>Reading Time:</p>
-						<h1 id="result-value">${time} mins</h1>
+						<h1><span id="result-value"></span> mins</h1>
 					</div>
 				</div>
 			</div>

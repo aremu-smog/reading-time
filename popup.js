@@ -10,9 +10,16 @@ readingTimeForm.addEventListener("submit", e => {
 	const rawText = textArea?.value?.trim()
 	const stats = readingTime(rawText)
 
-	resultValue.innerText = stats?.minutes
+	const actualTime = Math.round(stats?.minutes)
 
-	// alert("Reading time is: " + stats?.text)
+	/**
+	 * If the reading time is greater than 3 minutes, subtract 2,
+	 * this is discrepancy we  found with the current algorithm on the Other Faces of Tech website
+	 * @see {@link https://www.otherfaces.tech/story/bolanle-banwo-osadolo/} sample article
+	 * */
+	const finalTime = actualTime > 3 ? actualTime - 2 : actualTime
+	resultValue.innerText = finalTime
+
 	readingTimeForm.reset()
 
 	formContainer.classList.add("hide")
