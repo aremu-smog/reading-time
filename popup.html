@@ -39,6 +39,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				background-color: yellow;
 			}
 
 			#result-circle {
@@ -51,6 +52,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				margin: auto;
 			}
 			#result-circle p {
 				text-transform: uppercase;
@@ -58,12 +60,38 @@
 			}
 			#result-circle h1 {
 				font-size: 36px;
-				line-height: 0;
+				line-height: 1;
+			}
+			.hide {
+				display: none !important;
 			}
 		</style>
 	</head>
 	<body>
-		<section id="content-area"></section>
+		<section id="content-area">
+			<div id="form-container" class="">
+				<form id="readingTimeForm">
+					<h3 id="">Paste your text below</h3>
+					<textarea
+						id="textarea"
+						placeholder="Paste your text here..."
+						required="required"
+						rows="8"
+					></textarea>
+					<div>
+						<input type="submit" value="Get reading time" />
+					</div>
+				</form>
+			</div>
+			<div id="result-wrapper" class="hide">
+				<div id="result-circle">
+					<div>
+						<p>Reading Time:</p>
+						<h1 id="result-value">${time} mins</h1>
+					</div>
+				</div>
+			</div>
+		</section>
 	</body>
 
 	<script src="popup.js" type="module"></script>
