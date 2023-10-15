@@ -1,4 +1,8 @@
 {
   "name": "reading-time",
-  "version": "1.0"
+  "version": "1.0",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "puppeteer": "^21.3.8"
+  }
 }
