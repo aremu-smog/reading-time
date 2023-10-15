@@ -1,10 +1,11 @@
 {
-	"name": "⏱ Reading Time",
-	"description": "How long does it take to read a bunch of text?",
-	"version": "1.0",
-	"manifest_version": 3,
-	"action": {
-		"default_popup": "popup.html"
-	},
-	"permissions": ["scripting"]
+  "name": "⏱ Reading Time",
+  "description": "How long does it take to read a bunch of text?",
+  "version": "1.0",
+  "manifest_version": 3,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx2Ea+Bbf/YskAVzXRq38KItIDo4d6dsbEdbq6W8FedJwymN3QGZHLiBopcREgt3PSIcLMsL1T6Ieh7ha00RVTNcVNXKD6P916R1YYu92DVRSNLUADSuBC3bkd0c8A3UaQx1bVruJtP1rdjFPvQYCSyqyCUUTU/2X4m6qn4nxzVHgK6gpMHVTtg89dZyP4hqtam3TgnZxabf5sD5zuWF7R51UiGSV5wdzvnTnOSx8brFc9dssqVN0jU3tQezsXwPRA/u3qRdjFmMUvzKA+NiM1hqTAxG32xeackdEgzVkA2MA5QvruE2uMftpJsLnknz0xDGUgL/qb9iQKDz9ewmwSQIDAQAB",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["scripting"]
 }
