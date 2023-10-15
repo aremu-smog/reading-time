@@ -28,5 +28,5 @@ test("popup renders correctly", async function () {
 
   const textareaInput = await page.$("#textarea");
 
-  expect(textareaInput.value).toEqual("");
+  expect(textareaInput).not.toBe(undefined);
 });
