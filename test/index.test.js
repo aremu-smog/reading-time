@@ -4,6 +4,7 @@ const EXTENSION_PATH = "../";
 const EXTENSION_ID = "nbmbmdbbofmlehnmabhckabpmonajpek";
 
 let browser;
+let page;
 
 beforeEach(async () => {
   // Launch the browser
@@ -15,7 +16,7 @@ beforeEach(async () => {
     ],
   });
 
-  const page = await browser.newPage();
+  page = await browser.newPage();
   await page.goto(`chrome-extension://${EXTENSION_ID}/popup.html`);
 
 });
