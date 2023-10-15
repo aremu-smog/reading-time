@@ -14,6 +14,10 @@ beforeEach(async () => {
       `--load-extension=${EXTENSION_PATH}`,
     ],
   });
+
+  const page = await browser.newPage();
+  await page.goto(`chrome-extension://${EXTENSION_ID}/popup.html`);
+
 });
 
 afterEach(async function () {
@@ -22,9 +26,7 @@ afterEach(async function () {
   browser = undefined;
 });
 
-test("popup renders correctly", async function () {
-  const page = await browser.newPage();
-  await page.goto(`chrome-extension://${EXTENSION_ID}/popup.html`);
+test("textarea is empty onload", async function () {
 
   const textareaInput = await page.$("#textarea");
 
@@ -32,3 +34,9 @@ test("popup renders correctly", async function () {
 
   expect(textareaInputValue).toBe("");
 });
+
+test("button exists on page ", async function() {
+  const submitButton = await page.$("input[type='submit']");
+
+  expect(submitButton).not.toBe(undefined);
+})
