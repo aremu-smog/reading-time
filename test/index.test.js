@@ -39,6 +39,5 @@ test("textarea is empty onload", async function () {
 
 test("button exists on page ", async function () {
   const submitButton = await page.$("input[type='submit']");
-
   expect(submitButton).not.toBe(undefined);
 });
