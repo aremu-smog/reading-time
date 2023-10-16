@@ -28,7 +28,6 @@ afterEach(async function () {
 
 test("textarea is empty onload", async function () {
   const textareaInput = await page.$("#textarea");
-
   const textareaInputValue = await page.evaluate(
     (el) => el.value,
     textareaInput
